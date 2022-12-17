@@ -28,19 +28,9 @@ public class HostServiceTest {
     @Test(expected = IOException.class)
     public void testConnectionNotAvailable() throws IOException {
 
-        //
-        // Given
-        //
         when(externalSystemProxy.connectionAvailable(any(String.class))).thenThrow(new IOException());
 
-        //
-        // When
-        //
         hostService.connect();
 
-        //
-        // Then
-        //
-        // Empty as we are expecting an exception to be thrown
     }
 }
